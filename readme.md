@@ -1,2 +1,2 @@
-# SRD: Static Race Detector
+# SRD: (Go) Static Race Detector
 
