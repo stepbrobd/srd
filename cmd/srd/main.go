@@ -5,9 +5,17 @@ import (
 	"go/ast"
 	"go/parser"
 	"go/token"
+	"time"
+
+	"github.com/charmbracelet/log"
 )
 
 func main() {
+	for i := 1; i <= 100; i++ {
+		log.Info(fmt.Sprintf("Running %d/100...", i))
+		time.Sleep(10 * time.Millisecond)
+	}
+
 	//Create a FileSet to work with
 	fset := token.NewFileSet()
 	//Parse the file and create an AST
