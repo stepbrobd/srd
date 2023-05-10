@@ -1,0 +1,86 @@
+@misc{godev-golang-runtime-race-detector,
+	author = {The Go Authors},
+	title = {{D}ata {R}ace {D}etector - {T}he {G}o {P}rogramming {L}anguage},
+	howpublished = {\url{https://go.dev/doc/articles/race_detector#Runtime_Overheads}},
+	year = {2022},
+	note = {[Accessed 25-Feb-2023]},
+}
+
+@misc{godev-effective-go,
+	author = {The Go Authors},
+	title = {{E}ffective {G}o - {T}he {G}o {P}rogramming {L}anguage},
+	howpublished = {\url{https://go.dev/doc/effective_go}},
+	year = {2022},
+	note = {[Accessed 04-May-2023]},
+}
+
+@inproceedings{uber-golang-data-race-study,
+author = {Chabbi, Milind and Ramanathan, Murali Krishna},
+title = {A Study of Real-World Data Races in Golang},
+year = {2022},
+isbn = {9781450392655},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3519939.3523720},
+doi = {10.1145/3519939.3523720},
+abstract = {The concurrent programming literature is rich with tools and techniques for data race detection. Less, however, has been known about real-world, industry-scale deployment, experience, and insights about data races. Golang (Go for short) is a modern programming language that makes concurrency a first-class citizen. Go offers both message passing and shared memory for communicating among concurrent threads. Go is gaining popularity in modern microservice-based systems. Data races in Go stand in the face of its emerging popularity. In this paper, using our industrial codebase as an example, we demonstrate that Go developers embrace concurrency and show how the abundance of concurrency alongside language idioms and nuances make Go programs highly susceptible to data races. Google’s Go distribution ships with a built-in dynamic data race detector based on ThreadSanitizer. However, dynamic race detectors pose scalability and flakiness challenges; we discuss various software engineering trade-offs to make this detector work effectively at scale. We have deployed this detector in Uber’s 46 million lines of Go codebase hosting 2100 distinct microservices, found over 2000 data races, and fixed over 1000 data races, spanning 790 distinct code patches submitted by 210 unique developers over a six-month period. Based on a detailed investigation of these data race patterns in Go, we make seven high-level observations relating to the complex interplay between the Go language paradigm and data races.},
+booktitle = {Proceedings of the 43rd ACM SIGPLAN International Conference on Programming Language Design and Implementation},
+pages = {474–489},
+numpages = {16},
+keywords = {Dynamic analysis, Data race, Golang},
+location = {San Diego, CA, USA},
+series = {PLDI 2022}
+}
+
+@article{type-based-static-analysis-for-race-detection,
+author = {Flanagan, Cormac and Freund, Stephen N.},
+title = {Type-Based Race Detection for Java},
+year = {2000},
+issue_date = {May 2000},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+volume = {35},
+number = {5},
+issn = {0362-1340},
+url = {https://doi.org/10.1145/358438.349328},
+doi = {10.1145/358438.349328},
+abstract = {This paper presents a static race detection analysis for multithreaded Java programs. Our analysis is based on a formal type system that is capable of capturing many common synchronization patterns. These patterns include classes with internal synchronization, classes thatrequire client-side synchronization, and thread-local classes. Experience checking over 40,000 lines of Java code with the type system demonstrates that it is an effective approach for eliminating races conditions. On large examples, fewer than 20 additional type annotations per 1000 lines of code were required by the type checker, and we found a number of races in the standard Java libraries and other test programs.},
+journal = {SIGPLAN Not.},
+month = {may},
+pages = {219–232},
+numpages = {14}
+}
+
+@article{openmp-operational-semantics,
+  author       = {Simone Atzeni and
+                  Ganesh Gopalakrishnan},
+  title        = {An Operational Semantic Basis for OpenMP Race Analysis},
+  journal      = {CoRR},
+  volume       = {abs/1709.04551},
+  year         = {2017},
+  url          = {http://arxiv.org/abs/1709.04551},
+  eprinttype    = {arXiv},
+  eprint       = {1709.04551},
+  timestamp    = {Mon, 13 Aug 2018 16:48:05 +0200},
+  biburl       = {https://dblp.org/rec/journals/corr/abs-1709-04551.bib},
+  bibsource    = {dblp computer science bibliography, https://dblp.org}
+}
+
+@inproceedings{operational-semantics-for-multi-language,
+author = {Matthews, Jacob and Findler, Robert Bruce},
+title = {Operational Semantics for Multi-Language Programs},
+year = {2007},
+isbn = {1595935754},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/1190216.1190220},
+doi = {10.1145/1190216.1190220},
+abstract = {Inter-language interoperability is big business, as the success of Microsoft's .NET and COM and Sun's JVM show. Programming language designers are designing programming languages that reflect that fact --- SML#, Mondrian, and Scala, to name just a few examples, all treat interoperability with other languages as a central design feature. Still, current multi-language research tends not to focus on the semantics of interoperation features, but only on how to implement them efficiently. In this paper, we take first steps toward higher-level models of interoperating systems. Our technique abstracts away the low-level details of interoperability like garbage collection and representation coherence, and lets us focus on semantic properties like type-safety and observable equivalence.Beyond giving simple expressive models that are natural compositions of single-language models, our studies have uncovered several interesting facts about interoperability. For example, higher-order contracts naturally emerge as the glue to ensure that interoperating languages respect each other's type systems. While we present our results in an abstract setting, they shed light on real multi-language systems and tools such as the JNI, SWIG, and Haskell's stable pointers.},
+booktitle = {Proceedings of the 34th Annual ACM SIGPLAN-SIGACT Symposium on Principles of Programming Languages},
+pages = {3–10},
+numpages = {8},
+keywords = {operational semantics, multi-language systems, interoperability},
+location = {Nice, France},
+series = {POPL '07}
+}
+
