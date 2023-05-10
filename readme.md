@@ -4,25 +4,15 @@ A proof of concept work of extracting Structural Operational Semantics rules and
 
 ## Structural Operational Semantics Rules
 
-$
-\textbf{Goroutine Creation}\ \frac{}{(G, M, C) \xrightarrow{\texttt{go f()}} (G \cup \{\texttt{f()}\}, M, C)}
-$
+$\textbf{Goroutine Creation}\ \frac{}{(G, M, C) \xrightarrow{\texttt{go f()}} (G \cup \{\texttt{f()}\}, M, C)}$
 
-$
-\textbf{Memory Modification}\ \frac{\texttt{f()}\ \text{is}\ \texttt{data++}}{(G, M, C) \xrightarrow{\texttt{go f()}} (G - \{\texttt{f()}\}, M[\texttt{data} \rightarrow M(\texttt{data}) + 1], C)}
-$
+$\textbf{Memory Modification}\ \frac{\texttt{f()}\ \text{is}\ \texttt{data++}}{(G, M, C) \xrightarrow{\texttt{go f()}} (G - \{\texttt{f()}\}, M[\texttt{data} \rightarrow M(\texttt{data}) + 1], C)}$
 
-$
-\textbf{Channel Send}\ \frac{\texttt{f()}\ \text{is}\ \texttt{done <- true}}{(G, M, C) \xrightarrow{\texttt{go f()}} (G - \{\texttt{f()}\}, M, C[\texttt{done} \rightarrow C(\texttt{done}) \cup \{\texttt{true}\}])}
-$
+$\textbf{Channel Send}\ \frac{\texttt{f()}\ \text{is}\ \texttt{done <- true}}{(G, M, C) \xrightarrow{\texttt{go f()}} (G - \{\texttt{f()}\}, M, C[\texttt{done} \rightarrow C(\texttt{done}) \cup \{\texttt{true}\}])}$
 
-$
-\textbf{Channel Receive}\ \frac{\texttt{f()}\ \text{is}\ \texttt{<-done}}{(G, M, C) \xrightarrow{\texttt{go f()}} (G - \{\texttt{f()}\}, M, C[\texttt{done} \rightarrow C(\texttt{done}) - \{\texttt{true}\}])}
-$
+$\textbf{Channel Receive}\ \frac{\texttt{f()}\ \text{is}\ \texttt{<-done}}{(G, M, C) \xrightarrow{\texttt{go f()}} (G - \{\texttt{f()}\}, M, C[\texttt{done} \rightarrow C(\texttt{done}) - \{\texttt{true}\}])}$
 
-$
-\textbf{Print}\ \frac{\texttt{f()}\ \text{is}\ \texttt{fmt.Println(data)}}{(G, M, C) \xrightarrow{\texttt{go f()}} (G \cup \{\texttt{f()}\}, M, C)}
-$
+$\textbf{Print}\ \frac{\texttt{f()}\ \text{is}\ \texttt{fmt.Println(data)}}{(G, M, C) \xrightarrow{\texttt{go f()}} (G \cup \{\texttt{f()}\}, M, C)}$
 
 ## Run
 
